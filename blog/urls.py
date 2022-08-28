@@ -17,5 +17,13 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('', views.post_list, name='post_list'),
+    path('', views.logedin, name='login'),
+    path('register/', views.register, name='register'),
+    path('logout/', views.logedout, name="logout"),
+
+    path('home/', views.post_list, name='post_list'),
+    path('home-up/', views.post_list_up, name='post_list_up'),
+    path('post/<int:pk>/', views.post_detail, name='post_detail'),
+    path('post/new/', views.post_new, name='post_new'),
+    path('post/<int:pk>/<int:published>/edit/', views.post_edit, name='post_edit'),
 ]
